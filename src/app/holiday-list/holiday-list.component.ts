@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
+import { faAlignRight } from '@fortawesome/free-solid-svg-icons';
 export interface PeriodicElement {
   name: string;
   matricule: number;
@@ -7,14 +8,15 @@ export interface PeriodicElement {
   department: string;
   leaveStartDate: string;
   leaveEndDate: string;
+  state: boolean
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {matricule: 1, name: 'RANDRIA', firstName: 'Ruffin', department: 'PROD', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023'},
-  {matricule: 2, name: 'RAKOTOARISOA', firstName: 'Bao', department: 'PROD', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023'},
-  {matricule: 3, name: 'RAFARA', firstName: 'Vola', department: 'ADMIN', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023'},
-  {matricule: 4, name: 'ANDRIANALISON', firstName: 'Fetra', department: 'TECH', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023'},
-  {matricule: 5, name: 'RATEFY', firstName: 'Fanja', department: 'TECH', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023'},
+  {matricule: 1, name: 'RANDRIA', firstName: 'Ruffin', department: 'PROD', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023', state: true},
+  {matricule: 2, name: 'RAKOTOARISOA', firstName: 'Bao', department: 'PROD', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023', state: true},
+  {matricule: 3, name: 'RAFARA', firstName: 'Vola', department: 'ADMIN', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023', state: true},
+  {matricule: 4, name: 'ANDRIANALISON', firstName: 'Fetra', department: 'TECH', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023', state: true},
+  {matricule: 5, name: 'RATEFY', firstName: 'Fanja', department: 'TECH', leaveStartDate: '27/01/2023', leaveEndDate: '28/01/2023', state: false},
 ];
 
 @Component({
@@ -23,7 +25,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./holiday-list.component.scss']
 })
 export class HolidayListComponent {
-  displayedColumns: string[] = ['matricule', 'name', 'firstName', 'department', 'leaveStartDate', 'leaveEndDate'];
+  faAlignRight = faAlignRight;
+  displayedColumns: string[] = ['matricule', 'name', 'firstName', 'department', 'leaveStartDate', 'leaveEndDate', 'state'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   applyFilter(event: Event) {

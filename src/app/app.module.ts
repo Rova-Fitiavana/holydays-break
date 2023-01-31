@@ -11,6 +11,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
 import { HeaderComponent } from './header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HeaderComponent } from './header/header.component';
     MatTabsModule,
     MatFormFieldModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

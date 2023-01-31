@@ -1,5 +1,15 @@
-.header {
+.header-container-flex {
+  display: flex;
   width: 100%;
   height: 10vh;
-  background-color: hsla(360, 70%, 69%, 0.88)
+  background-color: hsla(360, 70%, 69%, 0.88);
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: end;
+  }
+.current-user-informations {
+  width: auto;
+  margin: 20px;
+  color: #FFFFFF;
 }
